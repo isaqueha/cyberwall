@@ -1,0 +1,18 @@
+{
+  "name": "cyberwall",
+  "version": "0.0.1",
+  "description": "Cyber Wall Game",
+  "main": "sketch.js",
+  "author": "Isaque Hoffmeister <isaque.ha@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "browser-sync start --server -f -w"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
