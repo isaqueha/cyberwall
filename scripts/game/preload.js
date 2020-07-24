@@ -1,7 +1,6 @@
 function preload() {
   imageScenario = loadImage('imagens/cenario/floresta.png');
-  imageCharacter = loadImage('imagens/personagem/correndoJorge.png');
-  imageCharacter2 = loadImage('imagens/personagem/correndoJorge2.png');
+  imageCharacter = 'imagens/personagem/sprites/idle.gif';
 
   imageEnemyMiguel = loadImage('imagens/inimigos/gotinha-voadoraMiguel.png');
   imageEnemyPedroTri = loadImage('imagens/inimigos/gotinha-voadoraPedroTri.png');

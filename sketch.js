@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(30);
+  frameRate(60);
   gameMusic.loop();
   game = new Game();
   start = new Start();
@@ -32,14 +32,22 @@ function windowResized() {
 }
 
 // TODO
-// ScoreBoard
+// Char size bigger
+// State machine with images
+// Make vertical platforms
+// Do the vertical scrolling
+// Score should be height
+// Vertical Parallax
+// Improve gravity (time in consideration?)
 // Improve collision
-// 
-// Reduce bugs in images
+// Keep all the proportion
+// Initial Screen
+// ScoreBoard
+// Reduce bugs in images when changing directions
 // 2nd level
 // Refactor constructors
 // Story
-// Car enemy Sprite
-// Outline the enemy in RED???
 // PowerUp?
+// 
+// Outline the enemy in RED???
 // Leaderboard???
