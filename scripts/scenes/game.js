@@ -6,7 +6,7 @@ class Game {
 	setup() {
 		scenario = new Scenario(imageScenario, 2);
 		// character = new Character(imageCharacter, 0, 30, 147, 180, 220, 270, 4, 4);
-		character = new Character(imageCharacter2, 30, 30, 124, 180, 188, 273, 2, 5);
+		character = new Character(imageCharacter, 30, 30, 124, 180, 188, 273, 2, 5);
 		live = new Live(map.config.maxLives, map.config.initialLives);
 		
 		score = new Score();
@@ -55,12 +55,19 @@ class Game {
 			character.jump();
 			jumpSound.play();
 		}
+		if (key === 'ArrowRight') {
+			character.setRight();
+			// character.run();
+		}
+		if (key === 'ArrowLeft') {
+			character.setLeft();
+		}
 	}
 
 	draw() {
 		// OPTION 1
 		scenario.draw();
-		scenario.move();
+		// scenario.move();
 
 		// OPTION 2
 
@@ -88,10 +95,8 @@ class Game {
 		const enemy = this.enemies[currentLine.enemy];
 		const isEnemyDone = enemy.x < - enemy.newWidth;
 	
-		enemy.velocity = currentLine.velocity + ((currentLine.velocity / 100) * 30) * this.enemyWave;
-		enemy.draw();
-		enemy.move();
-		// console.log(enemy.x);
+		// enemy.draw();
+		// enemy.move();
 	
 		if (isEnemyDone) {
 			this.enemyIndex++;

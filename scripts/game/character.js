@@ -6,24 +6,37 @@ class Character extends Animation {
     this.initialY = height - this.newHeight - this.yDiff;
     this.y = this.initialY; 
     this.jumpSpeed = 0;
-    this.gravityValue = 3;
+    this.gravityValue = 1;
     this.jumps = 0;
     this.maxJumps = 2;
     this.jumpHeight = -30;
+    this.movementSpeed = 2;
 
     this.invencible = false;
   }
 
   jump() {
+    this.imageChar.remove();
+		this.imageChar = createImg('imagens/personagem/sprites/jump.png');
     this.jumps = this.jumps + 1;
     if (this.jumps <= this.maxJumps) {
       this.jumpSpeed = this.jumpHeight;
+      this.imageChar.remove();
+		  this.imageChar = createImg('imagens/personagem/sprites/midAir.gif');
     }
+  }
+
+  run() {
+    this.x = this.x + this.movementSpeed;
   }
 
   gravity() {
     this.y = this.y + this.jumpSpeed;
     this.jumpSpeed = this.jumpSpeed + this.gravityValue;
+    // if (this.jumpSpeed > 0) {
+    //   this.imageChar.remove();
+		//   this.imageChar = createImg('imagens/personagem/sprites/landing.png');
+    // }
 
     if (this.y > this.initialY) {
       this.y = this.initialY;

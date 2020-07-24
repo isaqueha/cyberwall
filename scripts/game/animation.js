@@ -9,11 +9,37 @@ class Animation {
 		this.spriteWidth = spriteWidth;
 		this.spriteHeight = spriteHeight;
 		this.imageRows = rows;
-    this.imageColumns = columns;
+		this.imageColumns = columns;
+		
+    this.imageChar = createImg(image);
+		this.imageChar.hide();
+		this.imageChar.position(width/4, height/5 * 3);
 		
 		this.currentFrame = 0;
 		this.invencibleDraw = false;
-	}	
+	}
+
+  setLeft() {
+		this.imageChar.remove();
+		this.imageChar = createImg('imagens/personagem/sprites/idleLeft.gif');
+		this.animate();
+		this.imageChar.show();
+	}
+	
+	setRight() {
+		this.imageChar.remove();
+		this.imageChar = createImg('imagens/personagem/sprites/idle.gif');
+		this.animate();
+		this.imageChar.show();
+	}
+	
+	runRight() {
+		this.x = this.x + 3;
+	}
+
+	runLeft() {
+		this.x = this.x - 3;
+	}
   
   draw() {
 		if (this.invencible && this.invencibleDraw) {
@@ -22,20 +48,25 @@ class Animation {
 		} else if (this.invencible && !this.invencibleDraw) {
 			this.invencibleDraw = true;
 		}
-		const currentX = this.currentFrame % this.imageColumns * this.spriteWidth;
-		let currentY = Math.floor(this.currentFrame / this.imageColumns) * this.spriteHeight;
-		// For Droppy;
-		currentY -= (Math.floor(this.currentFrame / (this.imageColumns * this.imageColumns))) * 13;
 
-    image(this.image, this.x, this.y, this.newWidth, this.newHeight, currentX , currentY, this.spriteWidth, this.spriteHeight);
+		this.imageChar.show();
+	
+    // image(this.image, this.x, this.y, this.newWidth, this.newHeight, currentX , currentY, this.spriteWidth, this.spriteHeight);
     
     this.animate();
 	}
 	
 	animate() {
-    this.currentFrame++;
-    if(this.currentFrame >= (this.imageRows * this.imageColumns)) {
-      this.currentFrame = 0;
-    }
+		if (keyIsDown(RIGHT_ARROW)) {
+			this.runRight();
+		} else if (keyIsDown(LEFT_ARROW)) {
+			this.runLeft();
+		}
+		this.imageChar.position(this.x, this.y);
+		// this.x = this.x + 1;
+    // this.currentFrame++;
+    // if(this.currentFrame >= (this.imageRows * this.imageColumns)) {
+    //   this.currentFrame = 0;
+    // }
   }
 }
