@@ -14,6 +14,7 @@ class Animation {
     this.imageChar = createImg(image);
 		this.imageChar.hide();
 		this.imageChar.position(width/4, height/5 * 3);
+		this.imageChar.size(55, 100);
 		
 		this.currentFrame = 0;
 		this.invencibleDraw = false;
@@ -22,6 +23,7 @@ class Animation {
   setLeft() {
 		this.imageChar.remove();
 		this.imageChar = createImg('imagens/personagem/sprites/idleLeft.gif');
+		this.imageChar.size(55, 100);
 		this.animate();
 		this.imageChar.show();
 	}
@@ -29,6 +31,7 @@ class Animation {
 	setRight() {
 		this.imageChar.remove();
 		this.imageChar = createImg('imagens/personagem/sprites/idle.gif');
+		this.imageChar.size(55, 100);
 		this.animate();
 		this.imageChar.show();
 	}

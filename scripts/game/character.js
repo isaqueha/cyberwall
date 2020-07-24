@@ -17,12 +17,14 @@ class Character extends Animation {
 
   jump() {
     this.imageChar.remove();
-		this.imageChar = createImg('imagens/personagem/sprites/jump.png');
+    this.imageChar = createImg('imagens/personagem/sprites/jump.png');
+    this.imageChar.size(55, 100);
     this.jumps = this.jumps + 1;
     if (this.jumps <= this.maxJumps) {
       this.jumpSpeed = this.jumpHeight;
       this.imageChar.remove();
-		  this.imageChar = createImg('imagens/personagem/sprites/midAir.gif');
+      this.imageChar = createImg('imagens/personagem/sprites/midAir.gif');
+      this.imageChar.size(55, 100);
     }
   }
 

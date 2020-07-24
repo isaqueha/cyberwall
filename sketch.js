@@ -32,7 +32,6 @@ function windowResized() {
 }
 
 // TODO
-// Char size bigger
 // State machine with images
 // Make vertical platforms
 // Do the vertical scrolling
