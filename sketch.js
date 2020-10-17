@@ -8,17 +8,21 @@ function setup() {
   scenes = {
     start,
     game,
-    gameOver
+    gameOver,
   };
+  scenes[currentScene].setup();
 }
 
 function touchStarted() {
-  character.jump();
-  jumpSound.play();
+  // character.jump();
+  // jumpSound.play();
   return false;
 }
 
 function keyPressed() {
+  if (!game) {
+    game = new Game();
+  }
   game.keyPressed(key);
 }
 
@@ -28,25 +32,5 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  currentScene = 'start';
+  currentScene = "game";
 }
-
-// TODO
-// State machine with images
-// Make vertical platforms
-// Do the vertical scrolling
-// Score should be height
-// Vertical Parallax
-// Improve gravity (time in consideration?)
-// Improve collision
-// Keep all the proportion
-// Initial Screen
-// ScoreBoard
-// Reduce bugs in images when changing directions
-// 2nd level
-// Refactor constructors
-// Story
-// PowerUp?
-// 
-// Outline the enemy in RED???
-// Leaderboard???
