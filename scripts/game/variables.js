@@ -23,6 +23,7 @@ let game;
 let start;
 
 let scenario;
+let platform;
 let gameMusic;
 let jumpSound;
 let damageSound;
@@ -30,8 +31,7 @@ let character;
 let score;
 let map;
 
-
-let currentScene = 'start';
+let currentScene = "game";
 let scenes = [];
 
 let imageScenario1;
