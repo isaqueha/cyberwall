@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(60);
-  gameMusic.loop();
+  // gameMusic.loop();
   game = new Game();
   start = new Start();
   gameOver = new GameOver();
