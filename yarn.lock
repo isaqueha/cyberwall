@@ -1792,9 +1792,9 @@ fsevents@~2.1.2:
   linkType: hard
 
 "immutable@npm:^3":
-  version: 3.8.2
-  resolution: "immutable@npm:3.8.2"
-  checksum: 08e65dd0579e7d274e0959872aa3cda7b0da30ed2efebbd23fc2cff26ff7a5416f47e21dbf9b56d337c94b98399a15511df1b7a5db2fadae3e77cd60483c4205
+  version: 3.8.3
+  resolution: "immutable@npm:3.8.3"
+  checksum: 8/3c668e4e92d77876f95081ed695c594f802fc8f88dc888e562ce70d26eb92596c65fbd64caad8fef054358c21990d52c77b28e9dc7bd6c8f53cf44775cfb44f9
   languageName: node
   linkType: hard
 
